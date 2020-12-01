@@ -1,0 +1,22 @@
+{@nl.p4c.feedback.api.model.Invite invite}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body class="bg-blue-DEFAULT h-screen">
+<div class="container mx-auto h-full flex justify-center items-center">
+  <div class="w-1/2 mb-64">
+    <h1 class="font-hairline mb-6 text-white text-4xl">Thanks {invite.name},</h1>
+    <div class="font-sans text-white text-l">
+      Thanks for the feedback, it is much appreciated.
+    </div>
+    <a href="/" class="font-sans float-right hover:text-red-600 text-white font-bold py-2 px-4 rounded">Home</a>
+  </div>
+</div>
+{#include cloud}
+{/include}
+</body>
+</html>

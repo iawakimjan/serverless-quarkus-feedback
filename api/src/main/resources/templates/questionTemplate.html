@@ -1,0 +1,45 @@
+{@nl.p4c.feedback.api.model.Question question}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body class="bg-blue-DEFAULT h-screen">
+<div class="container mx-auto h-full flex flex-col justify-center">
+  <div class="mb-48">
+    <h1 class="flex font-sans text-white text-4xl">{question.title}</h1>
+    <div class="w-full">
+      <div class="font-sans pt-2 mt-8 text-white text-xl">{question.text}</div>
+
+      <form action="/invites/{question.inviteCode}/questions/{question.id}/answer" method="POST"
+            name="answerForm" enctype="multipart/form-data">
+        {#if question.type == "TEXT"}
+        <textarea required id="answerText" name="answerText" type="text" style="min-height: 150px;"
+                  class="form-control mt-6 block appearance-none w-full bg-white border border-grey-light hover:border-grey px-2 py-2 rounded shadow"
+                  placeholder="Amazing!"></textarea>
+        {#else if question.type == "SCORE" }
+        <div class="flex flex-row justify-center">
+          {#for i in 5}
+            <div class="flex flex-col mt-6 mx-3 items-center">
+              <input class="w-10 h-10" type="radio" id="{i}" name="score" value="{i}">
+              <label class="text-white text-2xl">{i}</label>
+            </div>
+          {/for}
+        </div>
+        {/if}
+
+        <a href="{#if question.previous == 0}/invites/{question.inviteCode}{#else}/invites/{question.inviteCode}/questions/{question.previous}{/if}"
+           class="font-sans text-xl float-left hover:text-red-600 text-white font-bold py-2">Previous</a>
+        <button type="submit"
+                class="font-sans text-xl float-right hover:text-red-600 text-white font-bold py-2">Next
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+{#include cloud}
+{/include}
+</body>
+</html>

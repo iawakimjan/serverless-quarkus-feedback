@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes changeText {
+  0% {
+    opacity: 0;
+  }
+  /*25% {*/
+  /*  opacity: 0.25;*/
+  /*}*/
+  /*50% {*/
+  /*  opacity: 0.5;*/
+  /*}*/
+  /*75% {*/
+  /*  opacity: 0.75;*/
+  /*}*/
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: changeText 2s linear;
+  animation-fill-mode: forwards;
+}
+
+.delay-2 {
+  animation-delay: 1s;
+}
+
+.delay-3 {
+  animation-delay: 2s;
+}

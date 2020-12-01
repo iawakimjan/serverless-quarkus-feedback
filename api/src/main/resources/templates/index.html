@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body class="bg-blue-DEFAULT h-screen">
+<div class="container mx-auto h-full flex justify-center items-center">
+  <div class="w-1/3 mb-10">
+    <h1 class="font-sans text-white text-4xl">Enter your feedback code</h1>
+    <form class="flex flex-row mt-6" action="/invites/validate-invite" method="POST" name="inviteForm"
+          enctype="multipart/form-data">
+      <input required id="inviteCode" name="inviteCode" type="text"
+             class="block appearance-none w-full bg-white border border-grey-light hover:border-grey px-2 py-2 rounded shadow"
+             placeholder="X563GIX">
+      <button type="submit" class="font-sans hover:text-red-600 text-white font-bold py-2 px-4 rounded">
+        Continue
+      </button>
+    </form>
+
+    {#if error}
+    <h2 class="font-hairline text-red-700 font-bold">{error}</h2>
+    {/if}
+  </div>
+</div>
+{#include cloud}
+{/include}
+</body>
+</html>
+

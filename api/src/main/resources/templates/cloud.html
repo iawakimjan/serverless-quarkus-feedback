@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<img style="position: absolute; bottom: 0%; right: 0%;" width="400" src="/assets/images/cloud.svg"/>
+<div id="time" style="position: absolute; bottom:0%; right: 0%;" class="mr-4 mb-3 text-4xl"></div>
+<script type="text/javascript">
+  window.onload = function () {
+    var loadTime = window.performance.timing.domContentLoadedEventEnd-window.performance.timing.navigationStart;
+    console.log('Page load time is '+ loadTime + 'ms');
+    document.getElementById("time").innerHTML = loadTime + 'ms';
+  }
+</script>
+</body>
+</html>
